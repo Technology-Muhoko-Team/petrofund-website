@@ -15,7 +15,7 @@ const Footer = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (footerRef.current) {
@@ -143,6 +143,11 @@ const Footer = () => {
                     Gallery
                   </h2>
                 </Link>
+                <a href="/Logo/newlogo.png" download="newlogo.png">
+                  <h2 className="text-sm md:text-base font-semibold cursor-pointer transition-all duration-300 hover:translate-x-2 hover:text-[#F47C20]">
+                    Get Our Logo
+                  </h2>
+                </a>
               </div>
             </div>
           </div>

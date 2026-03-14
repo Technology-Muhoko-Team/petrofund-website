@@ -23,9 +23,9 @@ const ScholarshipsHeader = () => {
         <div className="flex flex-col lg:flex-row mt-10 sm:mt-16 lg:mt-20 relative justify-center items-center w-full gap-6 lg:gap-0">
           <div className="w-full lg:w-[45%]">
             <h1 className="text-white font-semibold text-xl">
-              SCHOLARSHIPS FOR 2027
+              2027 SCHOLARSHIPS OPEN
               <br />
-              WILL OPEN IN AUGUST 2027vasas
+              FOR APPLICATIONS IN AUGUST 2026
             </h1>
             <p className="text-justify text-white mt-4 text-sm">
               In recognition of multiple oil and gas discoveries in the Orange
@@ -488,15 +488,6 @@ const ScholarshipsHeader = () => {
                     petrofund@namcor.com.na
                   </a>
                   .
-                </p>
-              </div>
-
-              <div className="mt-6 rounded-lg border-2 border-orange-500 bg-gradient-to-r from-orange-50 to-orange-100 p-6">
-                <p className="text-center text-lg font-bold text-orange-700 ">
-                  Deadline for Submitting all Applications:
-                </p>
-                <p className="mt-2 text-center text-2xl font-bold text-orange-900 ">
-                  Tuesday, 7 October 2025 at 13:00
                 </p>
               </div>
             </div>
