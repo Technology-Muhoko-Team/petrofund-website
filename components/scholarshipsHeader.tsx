@@ -25,7 +25,7 @@ const ScholarshipsHeader = () => {
             <h1 className="text-white font-semibold text-xl">
               SCHOLARSHIPS FOR 2027
               <br />
-              WILL OPEN IN AUGUST 2026
+              WILL OPEN IN AUGUST 2027v
             </h1>
             <p className="text-justify text-white mt-4 text-sm">
               In recognition of multiple oil and gas discoveries in the Orange
