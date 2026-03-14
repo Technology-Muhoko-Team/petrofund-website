@@ -1,0 +1,127 @@
+"use client";
+import MiniHero from "@/components/miniHero";
+import { CircleArrowRight, Contact } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import ContactSection from "@/components/contactSection";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { base_url } from "@/components/data/data";
+
+const Page = () => {
+  const [heroInfo, setHeroInfo] = useState<{
+    imageSrc: string;
+    title: string;
+    subtitle: string;
+  } | null>(null);
+
+  useEffect(() => {
+    async function fetchHero() {
+      try {
+        const res = await fetch(`${base_url}/api/hero-images`);
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        const contactHero = data?.data?.find(
+          (img: any) => img.page === "Contact Page"
+        );
+        setHeroInfo(
+          contactHero
+            ? {
+                imageSrc: contactHero.image_url,
+                title: contactHero.title,
+                subtitle: contactHero.subtitle,
+              }
+            : {
+                imageSrc: "/SectionImages/DesertHero.jpg",
+                title: "Contact Us",
+                subtitle: "Get in touch with us for any inquiries",
+              }
+        );
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    fetchHero();
+  }, []);
+
+  return (
+    <>
+      {heroInfo && (
+        <MiniHero
+          imageSrc={heroInfo.imageSrc}
+          title={heroInfo.title}
+          subtitle={heroInfo.subtitle}
+        />
+      )}
+
+      <section className="relative mb-5 sm:mb:10 md:mb-20 lg:mb-30 bottom-5 p-4 md:p-8 lg:p-10 xl:p-12">
+        <div className="bg-[#4F3996] shadow-2xl rounded-tl-[85px] flex flex-col md:flex-row overflow-hidden">
+          {/* CEO Image */}
+          <div className="w-full md:w-[35%] flex-shrink-0">
+            <Image
+              src="/SectionImages/Contact.jpg"
+              alt="Contact Image"
+              width={600}
+              height={600}
+              className="w-full h-auto md:h-full object-cover"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="w-full md:w-[65%] p-6 flex flex-col justify-between ml-0 md:ml-10 my-6 md:my-10">
+            <div className="flex flex-col sm:flex-row sm:my-2 justify-start items-start sm:items-center gap-y-4 sm:gap-x-5">
+              <Image
+                src="/Icons/City Buildings.svg"
+                height={25}
+                width={25}
+                alt="City"
+              />
+              <h1 className="font-semibold text-white text-md sm:text-sm">
+                41 Schanzenweg, Eros, Windhoek, Namibia
+              </h1>
+            </div>
+
+            {/* Phone */}
+            <div className="flex flex-col sm:flex-row sm:my-2 justify-start items-start sm:items-center gap-y-4 sm:gap-x-5">
+              <Image
+                src="/Icons/Rotary Dial Telephone.svg"
+                height={25}
+                width={25}
+                alt="Phone"
+              />
+              <h1 className="font-semibold text-white text-md sm:text-sm">
+                Tel: +264 61 400 443
+              </h1>
+            </div>
+
+            {/* Print */}
+            <div className="flex flex-col sm:flex-row sm:my-2 justify-start items-start sm:items-center gap-y-4 sm:gap-x-5">
+              <Image src="/Icons/Print.svg" height={25} width={25} alt="Fax" />
+              <h1 className="font-semibold text-white text-md sm:text-sm">
+                Fax: 0886510721
+              </h1>
+            </div>
+
+            {/* Email */}
+            <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center gap-y-4 sm:gap-x-5">
+              <Image
+                src="/Icons/Send Email.svg"
+                height={25}
+                width={25}
+                alt="Email"
+              />
+              <h1 className="font-semibold text-white text-md sm:text-sm">
+                E-mail: infor@petrofund.org
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ContactSection />
+    </>
+  );
+};
+
+export default Page;
