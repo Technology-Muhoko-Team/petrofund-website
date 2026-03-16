@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import ChatbotWidget from "@/components/chatbot/ChatbotWidget";
 import LoadingScreen from "@/components/loadingscreen";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const ubuntuSans = Ubuntu_Sans({
   subsets: ["latin"],
@@ -38,6 +39,9 @@ export default function RootLayout({
         </Suspense>
         <SpeedInsights />
         <ChatbotWidget />
+
+        {/* Vercel Analytics */}
+        <Analytics />
 
         {/* Google Analytics */}
         <Script
