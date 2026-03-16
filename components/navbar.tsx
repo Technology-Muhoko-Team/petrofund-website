@@ -242,7 +242,7 @@ export default function Navbar() {
                 href="https://petroconnect.com.na/"
                 target="_blank"
                 className={`transition-colors duration-300 relative whitespace-nowrap ${
-                  pathname === "/scholarships"
+                  pathname === "/petroconnect"
                     ? "text-[#F47C20]"
                     : "text-[#4F3996] hover:text-[#F47C20]"
                 }`}
