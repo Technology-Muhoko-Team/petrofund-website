@@ -103,7 +103,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="w-[100px] h-[80px] md:w-[150px] md:h-[100px] flex items-center justify-center">
+              <div className="w-[80px] h-[60px] sm:w-[110px] sm:h-[75px] md:w-[150px] md:h-[100px] flex items-center justify-center">
                 <Image
                   src="/Logo/newlogo.png"
                   width={300}
@@ -114,7 +114,7 @@ export default function Navbar() {
             </motion.div>
           </Link>
 
-          <ul className="hidden lg:flex justify-center items-center gap-4 xl:gap-8 py-4 text-[15px] xl:text-[16px] font-medium absolute left-1/2 -translate-x-1/2">
+          <ul className="hidden lg:flex justify-center items-center gap-2 xl:gap-6 2xl:gap-8 py-4 text-[13px] xl:text-[15px] 2xl:text-[16px] font-medium absolute left-1/2 -translate-x-1/2">
             {/* Home */}
             <motion.li
               initial={{ opacity: 0, y: -20 }}
