@@ -38,7 +38,7 @@ interface TrainingPageProps {
 
 export default function TrainingDetailPage({ params }: TrainingPageProps) {
   const [trainingInfo, setTrainingInfo] = useState<TrainingProgram[] | null>(
-    null
+    null,
   );
   const [trainingId, setTrainingId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
@@ -99,7 +99,7 @@ export default function TrainingDetailPage({ params }: TrainingPageProps) {
     const deadline = new Date(trainingItem!.application_deadline);
     const today = new Date();
     const daysUntilDeadline = Math.ceil(
-      (deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+      (deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
     );
     return daysUntilDeadline <= 7 && daysUntilDeadline >= 0;
   };
@@ -156,7 +156,7 @@ export default function TrainingDetailPage({ params }: TrainingPageProps) {
             <Card className="p-6">
               <h2 className="text-2xl font-bold mb-4">Overview</h2>
               <div
-                className="prose prose-sm max-w-none text-muted-foreground leading-relaxed"
+                className="rich-text-content"
                 dangerouslySetInnerHTML={{
                   __html: trainingItem!.full_description_html,
                 }}
@@ -231,13 +231,6 @@ export default function TrainingDetailPage({ params }: TrainingPageProps) {
               </div>
 
               <div className="mt-6 pt-6 border-t border-border space-y-3">
-                <motion.a
-                  href="https://innovation.muhoko.org/student/login"
-                  target="_blank"
-                  className="bg-primary flex gap-x-4 items-center justify-center text-white my-5 px-8 xl:px-10 py-2.5 rounded-md hover:bg-accent transition-colors duration-300 font-medium shadow-md text-[15px]"
-                >
-                  <p>Apply Now</p>
-                </motion.a>
                 {trainingItem!.attachment_url && (
                   <Button
                     variant="outline"
