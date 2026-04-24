@@ -96,7 +96,7 @@ export default function Navbar() {
             opacity: isVisible ? 1 : 0,
           }}
           transition={{ duration: 0.3, ease: "easeOut" }} // Faster transition for better UX
-          className="bg-[#dddddd] shadow-xl rounded-full px-4 md:px-8 w-[95%] flex justify-between items-center relative"
+          className="bg-[#dddddd] shadow-xl rounded-full px-4 md:px-8 w-[90%] flex justify-between items-center relative"
         >
           <Link href="/" className="flex-shrink-0">
             <motion.div
@@ -114,7 +114,7 @@ export default function Navbar() {
             </motion.div>
           </Link>
 
-          <ul className="hidden lg:flex justify-center items-center gap-2 xl:gap-6 2xl:gap-8 py-4 text-[13px] xl:text-[15px] 2xl:text-[16px] font-medium absolute left-1/2 -translate-x-1/2">
+          <ul className="hidden lg:flex justify-center items-center gap-2 xl:gap-6 2xl:gap-8 py-4 text-[13px] xl:text-[15px] 2xl:text-[16px] font-medium flex-1 pr-4">
             {/* Home */}
             <motion.li
               initial={{ opacity: 0, y: -20 }}
@@ -400,7 +400,7 @@ export default function Navbar() {
             </motion.li>
           </ul>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.4 }}
@@ -420,7 +420,7 @@ export default function Navbar() {
                 Login
               </motion.button>
             </a>
-          </motion.div>
+          </motion.div> */}
 
           <motion.button
             whileTap={{ scale: 0.9 }}
@@ -728,7 +728,7 @@ export default function Navbar() {
                   </motion.li>
                 </ul>
 
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.3 }}
@@ -747,7 +747,7 @@ export default function Navbar() {
                       Login
                     </motion.button>
                   </a>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
           </>
