@@ -400,28 +400,6 @@ export default function Navbar() {
             </motion.li>
           </ul>
 
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.4 }}
-            className="hidden lg:block"
-          >
-            <a
-              href="https://innovation.muhoko.org/student/login"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-primary text-white px-8 xl:px-10 py-2.5 rounded-full hover:bg-accent transition-colors duration-300 font-medium shadow-md text-[15px]"
-              >
-                Login
-              </motion.button>
-            </a>
-          </motion.div> */}
-
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -574,6 +552,25 @@ export default function Navbar() {
                       }`}
                     >
                       Scholarships
+                    </Link>
+                  </motion.li>
+
+                  {/* Scholarships */}
+                  <motion.li
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 2 * 0.05, duration: 0.3 }}
+                  >
+                    <Link
+                      href="https://petroconnect.com.na/"
+                      target="_blank"
+                      className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                        pathname === "/petroconnect"
+                          ? "bg-[#F47C20] text-white"
+                          : "text-[#4F3996] hover:bg-[#F47C20] hover:text-white"
+                      }`}
+                    >
+                      PetroConnect
                     </Link>
                   </motion.li>
 
