@@ -5,11 +5,13 @@ import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ScholarshipPopup from "@/components/ScholarshipPopup";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ChatbotWidget from "@/components/chatbot/ChatbotWidget";
 import LoadingScreen from "@/components/loadingscreen";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+
 
 const ubuntuSans = Ubuntu_Sans({
   subsets: ["latin"],
@@ -39,6 +41,7 @@ export default function RootLayout({
         </Suspense>
         <SpeedInsights />
         <ChatbotWidget />
+        <ScholarshipPopup />
 
         {/* Vercel Analytics */}
         <Analytics />
