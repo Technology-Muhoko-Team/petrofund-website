@@ -430,7 +430,7 @@ const ScholarshipsHeader = () => {
                         </span>
                         <span>
                         A guide to completing the application form, together with information on recommended universities offering the advertised postgraduate
-                        programmes, is available on the PETROFUND website or upon request via email.
+                        programmes,is available on the PETROFUND website or upon request via email.
                         </span>
                       </li>
                     </ul>
